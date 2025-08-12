@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zozik Company Transactions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    
+    }
+    .transaction {
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+      color: white;
+      max-width: 900px;
+      background: linear-gradient(90deg, #2196F3, #64B5F6);
+    }
+    .date {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .desc {
+      margin-bottom: 15px;
+      color: #000;
+    }
+    .answers {
+      background: #fff;
+      color: #222;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .option {
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+      border: 2px solid transparent;
+      user-select: none;
+      border-bottom: 3px solid #ccc;
+    }
+    .option:hover {
+      background-color: #e3f2fd;
+    }
+    .option.correct {
+      background-color: #c8e6c9 !important;
+      border-color: #4caf50 !important;
+      color: #2e7d32 !important;
+      cursor: default;
+      border-bottom-color: #388e3c !important;
+    }
+    .option.wrong {
+      background-color: #ffcdd2 !important;
+      border-color: #f44336 !important;
+      color: #c62828 !important;
+      cursor: default;
+      border-bottom-color: #d32f2f !important;
+    }
+    .option.disabled {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+    .option div {
+      display: inline-block;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="transaction">
+  <span class="date">1</span>
+  <div class="desc">
+    Started business with capital $1,000,000 cash and 100,000 car, 100,000 Bank Loan, 250,000 Land.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Cash ⬆ 1,000,000</div>
+      <div>Car ⬆ 100,000</div>
+      <div>Bank Loan ⬆ 100,000</div>
+      <div>Land ⬆ 250,000</div>
+      <div>O.Capital ⬆ 1,450,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬆ 1,000,000</div>
+      <div>Car ⬆ 100,000</div>
+      <div>Bank Loan ⬇ 100,000</div>
+      <div>Land ⬆ 250,000</div>
+      <div>O.Capital ⬆ 1,450,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬇ 1,000,000</div>
+      <div>Car ⬆ 100,000</div>
+      <div>Bank Loan ⬆ 100,000</div>
+      <div>Land ⬆ 250,000</div>
+      <div>O.Capital ⬇ 1,450,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">2</span>
+  <div class="desc">
+    Bought furniture for $25,000 on account.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Furniture ⬆ 25,000</div>
+      <div>Accounts Payable ⬆ 25,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Furniture ⬆ 25,000</div>
+      <div>Cash ⬇ 25,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Furniture ⬇ 25,000</div>
+      <div>Accounts Payable ⬆ 25,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">3</span>
+  <div class="desc">
+    Bought goods for $20,000 cash.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Goods ⬆ 20,000</div>
+      <div>Cash ⬇ 20,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Goods ⬆ 20,000</div>
+      <div>Accounts Payable ⬆ 20,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Goods ⬇ 20,000</div>
+      <div>Cash ⬇ 20,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">4</span>
+  <div class="desc">
+    Bought goods from Ram on Credit for $5,000.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Goods ⬆ 5,000</div>
+      <div>Accounts Payable ⬆ 5,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Goods ⬆ 5,000</div>
+      <div>Cash ⬇ 5,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Goods ⬇ 5,000</div>
+      <div>Accounts Payable ⬆ 5,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">5</span>
+  <div class="desc">
+    Sold goods for cash for $15,000.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Cash ⬆ 15,000</div>
+      <div>goods ⬇ 15,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬇ 15,000</div>
+      <div>goods ⬆ 15,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬆ 5,000</div>
+      <div>goods ⬆ 5,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">6</span>
+  <div class="desc">
+    Sold goods to Shyam on credit $8,000.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Accounts Receivable ⬆ 8,000</div>
+      <div>goods ⬇ 8,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬆ 8,000</div>
+      <div>goods ⬇ 8,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Accounts Receivable ⬇ 8,000</div>
+      <div>goods ⬆ 8,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">7</span>
+  <div class="desc">
+    Paid cash to Ram $4,000.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Cash ⬇ 4,000</div>
+      <div>Accounts Payable ⬇ 4,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬆ 4,000</div>
+      <div>Accounts Payable ⬇ 4,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬇ 4,000</div>
+      <div>Note Payable ⬇ 4,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">8</span>
+  <div class="desc">
+    Received cash from Shyam $5,000.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Cash ⬆ 5,000</div>
+      <div>Accounts Receivable ⬇ 5,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬆ 5,000</div>
+      <div>Accounts Receivable ⬆ 5,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬆ 5,000</div>
+      <div>Note Receivable ⬇ 5,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">9</span>
+  <div class="desc">
+    Deposited Cash into its Bank account (company's account) $25,000.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Cash ⬇ 25,000</div>
+      <div>Bank Account ⬆ 25,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬇ 2500</div>
+      <div>Bank Account ⬆ 2500</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬆ 25,000</div>
+      <div>Bank Account ⬇ 25,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">10</span>
+  <div class="desc">
+    Withdrawn $10,000 by cash from the company for personal use.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Owner's Draw ⬆ 10,000</div>
+      <div>Cash ⬇ 10,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Owner's Draw ⬇ 10,000</div>
+      <div>Cash ⬇ 10,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Owner's Draw ⬆ 10,000</div>
+      <div>Cash ⬆ 10,000</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function shuffleOptions(container) {
+    const options = Array.from(container.children);
+    for (let i = options.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      container.appendChild(options[j]);
+      options.splice(j, 1);
+    }
+  }
+
+  function resetAnswers(answerSet) {
+    answerSet.querySelectorAll('.option').forEach(option => {
+      option.classList.remove('correct', 'wrong', 'disabled');
+      option.style.pointerEvents = 'auto';
+      option.style.opacity = '1';
+    });
+  }
+
+  document.querySelectorAll('.answers').forEach(container => {
+    shuffleOptions(container);
+  });
+
+  document.querySelectorAll('.answers').forEach(answerSet => {
+    let clicked = false;
+
+    answerSet.querySelectorAll('.option').forEach(option => {
+      option.addEventListener('click', () => {
+        if (clicked) return;
+        clicked = true;
+
+        if (option.dataset.correct === "true") {
+          option.classList.add('correct');
+        } else {
+          option.classList.add('wrong');
+        }
+
+        answerSet.querySelectorAll('.option').forEach(opt => {
+          opt.classList.add('disabled');
+        });
+
+        setTimeout(() => {
+          resetAnswers(answerSet);
+          shuffleOptions(answerSet);
+          clicked = false;
+        }, 5000);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

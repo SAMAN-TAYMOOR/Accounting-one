@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Company XYZ Transactions - January 2024</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+    .transaction {
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+      color: white;
+      max-width: 900px;
+      background: linear-gradient(90deg, #2196F3, #64B5F6);
+    }
+    .date {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .desc {
+      margin-bottom: 15px;
+    }
+    .answers {
+      background: #fff;
+      color: #222;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .option {
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+      border: 2px solid transparent;
+      user-select: none;
+      border-bottom: 3px solid #ccc;
+    }
+    .option:hover {
+      background-color: #e3f2fd;
+    }
+    .option.correct {
+      background-color: #c8e6c9 !important;
+      border-color: #4caf50 !important;
+      color: #2e7d32 !important;
+      cursor: default;
+      border-bottom-color: #388e3c !important;
+    }
+    .option.wrong {
+      background-color: #ffcdd2 !important;
+      border-color: #f44336 !important;
+      color: #c62828 !important;
+      cursor: default;
+      border-bottom-color: #d32f2f !important;
+    }
+    .option.disabled {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+    .option div {
+      display: inline-block;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="transaction">
+  <span class="date">January 1</span>
+  <div class="desc">
+    Company XYZ commenced 2024, with an initial capital of $7,500,000 divided as following: Put half of the capital into the cash, 15% on the company's bank account, 12% a car, 8% an equipment, and the rest is allocated for a land.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Cash ⬆ 3,750,000</div>
+      <div>Bank Account ⬆ 1,125,000</div>
+      <div>Car ⬆ 900,000</div>
+      <div>Equipment ⬆ 600,000</div>
+      <div>Land ⬆ 1,725,000</div>
+      <div>O.Capital ⬆ 7,750,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬆ 3,750,000</div>
+      <div>Bank Account ⬆ 1,125,000</div>
+      <div>Car ⬆ 900,000</div>
+      <div>Equipment ⬆ 600,000</div>
+      <div>Land ⬆ 1,725,000</div>
+      <div>O.Capital ⬇ 7,750,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬆ 3,500,000</div>
+      <div>Bank Account ⬆ 1,200,000</div>
+      <div>Car ⬆ 900,000</div>
+      <div>Equipment ⬆ 600,000</div>
+      <div>Land ⬆ 1,725,000</div>
+      <div>O.Capital ⬆ 7,750,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">January 4</span>
+  <div class="desc">
+    Provided $150,000 worth of services to its customers. Received one third in cash and promised to pay the remaining amount within 20 days.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Cash ⬆ 50,000</div>
+      <div>Accounts Receivable ⬆ 100,000</div>
+      <div>Servise Reveneu ⬆ 150,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬆ 100,000</div>
+      <div>Accounts Receivable ⬆ 50,000</div>
+      <div>Servise Reveneu ⬆ 150,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬆ 150,000</div>
+      <div>Account Receivable ⬆ 50,000</div>
+      <div>Servise Reveneu ⬇ 150,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">January 5</span>
+  <div class="desc">
+    The company paid $24,000 as rent in advance for one year, covering the period through January 2024. As per the agreement, rent payments are scheduled to be made on the 5th of each month.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Prepaid Rent ⬆ 22,000</div>
+      <div>Rent Expenses ⬆ 2,000</div>
+      <div>Cash ⬇ 24,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Rent Expense ⬆ 22,000</div>
+      <div>Prepaid Rent ⬆ 2,000</div>
+      <div>Cash ⬇ 24,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Prepaid Rent ⬆ 24,000</div>
+      <div>Rent Expenses ⬆ 2,000</div>
+      <div>Cash ⬇ 22,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">January 7</span>
+  <div class="desc">
+    The Company purchased $10,000 supplies from Dana Company on credit (payment due within 30 days).
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Supplies ⬆ 10,000</div>
+      <div>Accounts Payable ⬆ 10,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Supplies ⬆ 10,000</div>
+      <div>Cash ⬇ 10,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Supplies ⬆ 10,000</div>
+      <div>Note Payable ⬆ 10,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">January 9</span>
+  <div class="desc">
+    The Company completed work for a client and immediately collected the $3,500 cash earned.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Cash ⬆ 3,500</div>
+      <div>Service Revenue ⬆ 3,500</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬇ 3,500</div>
+      <div>Service Revenue ⬆ 3,500</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬆ 3,500</div>
+      <div>Service Revenue ⬇ 3,500</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">January 18</span>
+  <div class="desc">
+    The Company collected $45,000 cash as a partial payment for the amount owed by the client in transaction of January 4.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Cash ⬆ 45,000</div>
+      <div>Accounts Receivable ⬇ 45,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬆ 45,000</div>
+      <div>Accounts Payable ⬇ 45,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬆ 45,000</div>
+      <div>Note Receivable ⬆ 45,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">January 19</span>
+  <div class="desc">
+    The Company completed work for a client and sent a bill for $5,000.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Accounts Receivable ⬆ 5,000</div>
+      <div>Service Revenue ⬆ 5,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬆ 5,000</div>
+      <div>Service Revenue ⬆ 5,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Cash ⬇ 5,000</div>
+      <div>Service Revenue ⬆ 5,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">January 20</span>
+  <div class="desc">
+    The Company paid $5,000 cash to Dana Company in order to settle its liability.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Accounts Payable ⬇ 5,000</div>
+      <div>Cash ⬇ 5,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Accounts Payable ⬆ 5,000</div>
+      <div>Cash ⬇ 5,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Accounts Payable ⬇ 5,000</div>
+      <div>Cash ⬆ 5,000</div>
+    </div>
+  </div>
+</div>
+
+<div class="transaction">
+  <span class="date">January 29</span>
+  <div class="desc">
+    The Owner withdrew $1,000 cash from the company for personal use.
+  </div>
+  <div class="answers">
+    <div class="option" data-correct="true">
+      <div>Owner's Draw ⬆ 1,000</div>
+      <div>Cash ⬇ 1,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Owner's Draw ⬇ 1,000</div>
+      <div>Cash ⬇ 1,000</div>
+    </div>
+    <div class="option" data-correct="false">
+      <div>Owner's Draw ⬆ 1,000</div>
+      <div>Cash ⬆ 1,000</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function shuffleOptions(container) {
+    const options = Array.from(container.children);
+    for (let i = options.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      container.appendChild(options[j]);
+      options.splice(j, 1);
+    }
+  }
+
+  function resetAnswers(answerSet) {
+    answerSet.querySelectorAll('.option').forEach(option => {
+      option.classList.remove('correct', 'wrong', 'disabled');
+      option.style.pointerEvents = 'auto';
+      option.style.opacity = '1';
+    });
+  }
+
+  document.querySelectorAll('.answers').forEach(container => {
+    shuffleOptions(container);
+  });
+
+  document.querySelectorAll('.answers').forEach(answerSet => {
+    let clicked = false;
+
+    answerSet.querySelectorAll('.option').forEach(option => {
+      option.addEventListener('click', () => {
+        if (clicked) return;
+        clicked = true;
+
+        if (option.dataset.correct === "true") {
+          option.classList.add('correct');
+        } else {
+          option.classList.add('wrong');
+        }
+
+        answerSet.querySelectorAll('.option').forEach(opt => {
+          opt.classList.add('disabled');
+        });
+
+        setTimeout(() => {
+          resetAnswers(answerSet);
+          shuffleOptions(answerSet);
+          clicked = false;
+        }, 5000);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
